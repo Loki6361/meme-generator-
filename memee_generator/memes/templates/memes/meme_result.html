@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Meme</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            animation: fadeIn 0.5s ease-in-out; /* Fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        h1 {
+            color: #ffcc00; /* Bright yellow for the heading */
+            margin-bottom: 20px;
+            animation: slideDown 0.5s ease-in-out; /* Slide-down animation */
+        }
+
+        @keyframes slideDown {
+            0% { transform: translateY(-20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        img {
+            max-width: 90%; /* Responsive image width */
+            height: auto;
+            border-radius: 8px; /* Rounded corners for the image */
+            border: 5px solid #1e1e1e; /* Dark border to match theme */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px; /* Adjust heading size for mobile */
+            }
+            
+            img {
+                max-width: 95%; /* Slightly larger max width on mobile */
+                margin-bottom: 10px; /* Space below image */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Generated Meme</h1>
+    <img src="data:image/png;base64,{{ meme_image }}" alt="Meme"/>
+</body>
+</html>
